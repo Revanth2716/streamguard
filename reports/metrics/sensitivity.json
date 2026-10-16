@@ -1,0 +1,211 @@
+{
+  "data_origin": "simulated",
+  "config": {
+    "simulator": {
+      "seed": 20261016,
+      "n_reference": 1200,
+      "n_stream": 1400,
+      "interval_seconds": 60,
+      "cycle_points": 48,
+      "start_timestamp": "2026-01-01T00:00:00",
+      "ar1_phi": 0.35,
+      "load_sigma": 1.0,
+      "multiplicative": [
+        "latency_ms",
+        "request_rate"
+      ],
+      "anomaly_fraction_pre_drift": 0.7,
+      "n_point_anomalies": 24,
+      "anomaly_min_len": 1,
+      "anomaly_max_len": 8,
+      "anomaly_sigma_low": 2.6,
+      "anomaly_sigma_high": 9.0,
+      "anomaly_kinds": [
+        "spike",
+        "burst",
+        "dropout",
+        "latency_storm"
+      ],
+      "baselines": {
+        "latency_ms": 118.0,
+        "cpu_util": 0.46,
+        "mem_util": 0.58,
+        "request_rate": 640.0
+      },
+      "noise": {
+        "latency_ms": 0.05,
+        "cpu_util": 0.028,
+        "mem_util": 0.005,
+        "request_rate": 0.05
+      },
+      "diurnal_amplitude": {
+        "latency_ms": 0.06,
+        "cpu_util": 0.08,
+        "mem_util": 0.015,
+        "request_rate": 0.2
+      },
+      "load_sensitivity": {
+        "latency_ms": 0.12,
+        "cpu_util": 0.1,
+        "mem_util": 0.03,
+        "request_rate": 0.15
+      },
+      "shift": {
+        "enabled": true,
+        "start_fraction": 0.6,
+        "latency_mult": 1.18,
+        "cpu_delta": 0.055,
+        "mem_delta": 0.018,
+        "request_rate_mult": 1.1,
+        "noise_mult": 1.15,
+        "component": "mean_and_noise_shift"
+      }
+    },
+    "detector": {
+      "features": [
+        "latency_ms",
+        "cpu_util",
+        "mem_util",
+        "request_rate"
+      ],
+      "zscore_window": 120,
+      "zscore_threshold": 3.5,
+      "zscore_min_periods": 30,
+      "contamination": 0.02,
+      "if_n_estimators": 200,
+      "if_random_state": 20261016,
+      "if_severity_sigma": [
+        2.0,
+        3.0,
+        4.0
+      ],
+      "static_threshold_quantile": 0.995
+    },
+    "drift": {
+      "features": [
+        "latency_ms",
+        "cpu_util",
+        "mem_util",
+        "request_rate"
+      ],
+      "window_size": 200,
+      "step": 200,
+      "alpha": 0.01,
+      "correction": "holm",
+      "min_window_size": 120,
+      "psi_bins": 10,
+      "effect_size_floor": 0.2
+    },
+    "output_dir": "reports",
+    "alert_state_path": "data/processed/alert_state.json"
+  },
+  "note": "Same seeded dataset (seed 20261016) for every row of each sweep; only the named setting changes. Numbers are measured, not assumed.",
+  "contamination_sweep": [
+    {
+      "contamination": 0.02,
+      "flags": 118,
+      "precision": 0.4492,
+      "recall": 0.4649,
+      "f1": 0.4569,
+      "true_anomaly_rate": 0.0814
+    },
+    {
+      "contamination": 0.05,
+      "flags": 255,
+      "precision": 0.4118,
+      "recall": 0.9211,
+      "f1": 0.5691,
+      "true_anomaly_rate": 0.0814
+    },
+    {
+      "contamination": 0.08,
+      "flags": 321,
+      "precision": 0.3551,
+      "recall": 1.0,
+      "f1": 0.5241,
+      "true_anomaly_rate": 0.0814
+    },
+    {
+      "contamination": 0.12,
+      "flags": 403,
+      "precision": 0.2829,
+      "recall": 1.0,
+      "f1": 0.441,
+      "true_anomaly_rate": 0.0814
+    }
+  ],
+  "drift_effect_size_floor_sweep": [
+    {
+      "effect_size_floor": 0.0,
+      "clean_windows": 4,
+      "clean_windows_flagged": 0,
+      "shifted_windows": 2,
+      "shifted_windows_flagged": 2,
+      "max_ks_on_clean": 0.1242
+    },
+    {
+      "effect_size_floor": 0.1,
+      "clean_windows": 4,
+      "clean_windows_flagged": 0,
+      "shifted_windows": 2,
+      "shifted_windows_flagged": 2,
+      "max_ks_on_clean": 0.1242
+    },
+    {
+      "effect_size_floor": 0.15,
+      "clean_windows": 4,
+      "clean_windows_flagged": 0,
+      "shifted_windows": 2,
+      "shifted_windows_flagged": 2,
+      "max_ks_on_clean": 0.1242
+    },
+    {
+      "effect_size_floor": 0.2,
+      "clean_windows": 4,
+      "clean_windows_flagged": 0,
+      "shifted_windows": 2,
+      "shifted_windows_flagged": 2,
+      "max_ks_on_clean": 0.1242
+    },
+    {
+      "effect_size_floor": 0.3,
+      "clean_windows": 4,
+      "clean_windows_flagged": 0,
+      "shifted_windows": 2,
+      "shifted_windows_flagged": 2,
+      "max_ks_on_clean": 0.1242
+    }
+  ],
+  "drift_autocorrelation_sweep": [
+    {
+      "ar1_phi": 0.0,
+      "clean_windows": 4,
+      "clean_windows_flagged_no_floor": 0,
+      "max_ks_on_clean": 0.0925
+    },
+    {
+      "ar1_phi": 0.2,
+      "clean_windows": 4,
+      "clean_windows_flagged_no_floor": 0,
+      "max_ks_on_clean": 0.1133
+    },
+    {
+      "ar1_phi": 0.35,
+      "clean_windows": 4,
+      "clean_windows_flagged_no_floor": 0,
+      "max_ks_on_clean": 0.1242
+    },
+    {
+      "ar1_phi": 0.5,
+      "clean_windows": 4,
+      "clean_windows_flagged_no_floor": 1,
+      "max_ks_on_clean": 0.1525
+    },
+    {
+      "ar1_phi": 0.72,
+      "clean_windows": 4,
+      "clean_windows_flagged_no_floor": 1,
+      "max_ks_on_clean": 0.195
+    }
+  ]
+}

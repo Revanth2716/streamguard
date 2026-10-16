@@ -1,0 +1,48 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# --- Virtual environments (kept on D:, never committed) ---
+.venv/
+venv/
+env/
+.python-version
+
+# --- Tooling caches ---
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# --- Streamlit / runtime state ---
+.streamlit/secrets.toml
+data/processed/*.csv
+data/processed/*.json
+
+# --- Logs and runtime scratch (measured reports are tracked on purpose) ---
+*.log
+*.pid
+*.tmp
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# --- Editor / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Freebuff workspace metadata ---
+.freebuff/

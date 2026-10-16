@@ -1,0 +1,2579 @@
+{
+  "data_origin": "simulated",
+  "primary_detector": "isolation_forest",
+  "primary_metrics": {
+    "detector": "isolation_forest",
+    "n": 1400,
+    "tp": 53,
+    "fp": 65,
+    "tn": 1221,
+    "fn": 61,
+    "precision": 0.449153,
+    "recall": 0.464912,
+    "f1": 0.456897,
+    "accuracy": 0.91,
+    "specificity": 0.949456,
+    "false_positive_rate": 0.050544,
+    "balanced_accuracy": 0.707184,
+    "average_precision": 0.408879,
+    "roc_auc": 0.939572,
+    "positives": 114,
+    "predicted_positives": 118,
+    "segment": "all"
+  },
+  "confusion_matrix": {
+    "predicted normal": {
+      "actual normal": 1221,
+      "actual anomaly": 61
+    },
+    "predicted anomaly": {
+      "actual normal": 65,
+      "actual anomaly": 53
+    }
+  },
+  "metrics_by_detector": [
+    {
+      "detector": "static_percentile",
+      "n": 1400,
+      "tp": 112,
+      "fp": 66,
+      "tn": 1220,
+      "fn": 2,
+      "precision": 0.629213,
+      "recall": 0.982456,
+      "f1": 0.767123,
+      "accuracy": 0.951429,
+      "specificity": 0.948678,
+      "false_positive_rate": 0.051322,
+      "balanced_accuracy": 0.965567,
+      "average_precision": 0.973424,
+      "roc_auc": 0.989584,
+      "positives": 114,
+      "predicted_positives": 178,
+      "segment": "all"
+    },
+    {
+      "detector": "rolling_zscore",
+      "n": 1400,
+      "tp": 59,
+      "fp": 3,
+      "tn": 1283,
+      "fn": 55,
+      "precision": 0.951613,
+      "recall": 0.517544,
+      "f1": 0.670455,
+      "accuracy": 0.958571,
+      "specificity": 0.997667,
+      "false_positive_rate": 0.002333,
+      "balanced_accuracy": 0.757606,
+      "average_precision": 0.866424,
+      "roc_auc": 0.972088,
+      "positives": 114,
+      "predicted_positives": 62,
+      "segment": "all"
+    },
+    {
+      "detector": "isolation_forest",
+      "n": 1400,
+      "tp": 53,
+      "fp": 65,
+      "tn": 1221,
+      "fn": 61,
+      "precision": 0.449153,
+      "recall": 0.464912,
+      "f1": 0.456897,
+      "accuracy": 0.91,
+      "specificity": 0.949456,
+      "false_positive_rate": 0.050544,
+      "balanced_accuracy": 0.707184,
+      "average_precision": 0.408879,
+      "roc_auc": 0.939572,
+      "positives": 114,
+      "predicted_positives": 118,
+      "segment": "all"
+    },
+    {
+      "detector": "dummy",
+      "n": 1400,
+      "tp": 0,
+      "fp": 0,
+      "tn": 1286,
+      "fn": 114,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.918571,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "balanced_accuracy": 0.5,
+      "average_precision": 0.081429,
+      "roc_auc": 0.5,
+      "positives": 114,
+      "predicted_positives": 0,
+      "segment": "all"
+    }
+  ],
+  "detection_latency": [
+    {
+      "anomaly_id": 1,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 8,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 1,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 8,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 8
+    },
+    {
+      "anomaly_id": 1,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 8,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 2
+    },
+    {
+      "anomaly_id": 1,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 8,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 1.0,
+      "hits": 6
+    },
+    {
+      "anomaly_id": 2,
+      "kind": "spike",
+      "features": "mem_util",
+      "duration": 3,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 2,
+      "kind": "spike",
+      "features": "mem_util",
+      "duration": 3,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 3
+    },
+    {
+      "anomaly_id": 2,
+      "kind": "spike",
+      "features": "mem_util",
+      "duration": 3,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 3
+    },
+    {
+      "anomaly_id": 2,
+      "kind": "spike",
+      "features": "mem_util",
+      "duration": 3,
+      "detector": "isolation_forest",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 3,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 3,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 3,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "rolling_zscore",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 3,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 2
+    },
+    {
+      "anomaly_id": 4,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 4,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 4,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 4,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 4,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 4,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 4,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 4,
+      "detector": "isolation_forest",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 5,
+      "kind": "spike",
+      "features": "mem_util,request_rate",
+      "duration": 3,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 5,
+      "kind": "spike",
+      "features": "mem_util,request_rate",
+      "duration": 3,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 3
+    },
+    {
+      "anomaly_id": 5,
+      "kind": "spike",
+      "features": "mem_util,request_rate",
+      "duration": 3,
+      "detector": "rolling_zscore",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 5,
+      "kind": "spike",
+      "features": "mem_util,request_rate",
+      "duration": 3,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 3
+    },
+    {
+      "anomaly_id": 6,
+      "kind": "spike",
+      "features": "mem_util",
+      "duration": 1,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 6,
+      "kind": "spike",
+      "features": "mem_util",
+      "duration": 1,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 1
+    },
+    {
+      "anomaly_id": 6,
+      "kind": "spike",
+      "features": "mem_util",
+      "duration": 1,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 1
+    },
+    {
+      "anomaly_id": 6,
+      "kind": "spike",
+      "features": "mem_util",
+      "duration": 1,
+      "detector": "isolation_forest",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 7,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 5,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 7,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 5,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 5
+    },
+    {
+      "anomaly_id": 7,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 5,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 7,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 5,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 2
+    },
+    {
+      "anomaly_id": 8,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 8,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 8,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 8,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "isolation_forest",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 9,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 9,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 9,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 3
+    },
+    {
+      "anomaly_id": 9,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 2
+    },
+    {
+      "anomaly_id": 10,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 8,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 10,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 8,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 8
+    },
+    {
+      "anomaly_id": 10,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 8,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 2
+    },
+    {
+      "anomaly_id": 10,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 8,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 8
+    },
+    {
+      "anomaly_id": 11,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 4,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 11,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 4,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 11,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 4,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 11,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 4,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 1
+    },
+    {
+      "anomaly_id": 12,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 5,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 12,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 5,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 5
+    },
+    {
+      "anomaly_id": 12,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 5,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 5
+    },
+    {
+      "anomaly_id": 12,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 5,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 5
+    },
+    {
+      "anomaly_id": 13,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 7,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 13,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 7,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 7
+    },
+    {
+      "anomaly_id": 13,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 7,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 7
+    },
+    {
+      "anomaly_id": 13,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 7,
+      "detector": "isolation_forest",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 14,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 1,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 14,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 1,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 1
+    },
+    {
+      "anomaly_id": 14,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 1,
+      "detector": "rolling_zscore",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 14,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 1,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 1
+    },
+    {
+      "anomaly_id": 15,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 6,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 15,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 6,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 6
+    },
+    {
+      "anomaly_id": 15,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 6,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 2
+    },
+    {
+      "anomaly_id": 15,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 6,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 3
+    },
+    {
+      "anomaly_id": 16,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 16,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 16,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "rolling_zscore",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 16,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 4,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 17,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 17,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 17,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 17,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "isolation_forest",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 18,
+      "kind": "burst",
+      "features": "request_rate",
+      "duration": 6,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 18,
+      "kind": "burst",
+      "features": "request_rate",
+      "duration": 6,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 6
+    },
+    {
+      "anomaly_id": 18,
+      "kind": "burst",
+      "features": "request_rate",
+      "duration": 6,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 6
+    },
+    {
+      "anomaly_id": 18,
+      "kind": "burst",
+      "features": "request_rate",
+      "duration": 6,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 2
+    },
+    {
+      "anomaly_id": 19,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 7,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 19,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 7,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 2.0,
+      "hits": 5
+    },
+    {
+      "anomaly_id": 19,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 7,
+      "detector": "rolling_zscore",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 19,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 7,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 3.0,
+      "hits": 3
+    },
+    {
+      "anomaly_id": 20,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 2,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 20,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 2,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 2
+    },
+    {
+      "anomaly_id": 20,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 2,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 1
+    },
+    {
+      "anomaly_id": 20,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 2,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 2
+    },
+    {
+      "anomaly_id": 21,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 5,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 21,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 5,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 5
+    },
+    {
+      "anomaly_id": 21,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 5,
+      "detector": "rolling_zscore",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 21,
+      "kind": "latency_storm",
+      "features": "latency_ms,cpu_util",
+      "duration": 5,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 5
+    },
+    {
+      "anomaly_id": 22,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 22,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 22,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 3
+    },
+    {
+      "anomaly_id": 22,
+      "kind": "burst",
+      "features": "mem_util",
+      "duration": 4,
+      "detector": "isolation_forest",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 23,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 7,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 23,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 7,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 7
+    },
+    {
+      "anomaly_id": 23,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 7,
+      "detector": "rolling_zscore",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 4
+    },
+    {
+      "anomaly_id": 23,
+      "kind": "burst",
+      "features": "latency_ms",
+      "duration": 7,
+      "detector": "isolation_forest",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 24,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 8,
+      "detector": "dummy",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 24,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 8,
+      "detector": "static_percentile",
+      "detected": true,
+      "latency": 0.0,
+      "hits": 8
+    },
+    {
+      "anomaly_id": 24,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 8,
+      "detector": "rolling_zscore",
+      "detected": false,
+      "latency": NaN,
+      "hits": 0
+    },
+    {
+      "anomaly_id": 24,
+      "kind": "dropout",
+      "features": "request_rate,latency_ms",
+      "duration": 8,
+      "detector": "isolation_forest",
+      "detected": true,
+      "latency": 3.0,
+      "hits": 4
+    }
+  ],
+  "latency_summary": [
+    {
+      "detector": "static_percentile",
+      "events": 24,
+      "detected": 24,
+      "median_latency": 0.0,
+      "detection_rate": 1.0
+    },
+    {
+      "detector": "rolling_zscore",
+      "events": 24,
+      "detected": 17,
+      "median_latency": 0.0,
+      "detection_rate": 0.7083333333333334
+    },
+    {
+      "detector": "isolation_forest",
+      "events": 24,
+      "detected": 16,
+      "median_latency": 0.0,
+      "detection_rate": 0.6666666666666666
+    },
+    {
+      "detector": "dummy",
+      "events": 24,
+      "detected": 0,
+      "median_latency": NaN,
+      "detection_rate": 0.0
+    }
+  ],
+  "segment_metrics": [
+    {
+      "detector": "static_percentile",
+      "n": 560,
+      "tp": 60,
+      "fp": 49,
+      "tn": 449,
+      "fn": 2,
+      "precision": 0.550459,
+      "recall": 0.967742,
+      "f1": 0.701754,
+      "accuracy": 0.908929,
+      "specificity": 0.901606,
+      "false_positive_rate": 0.098394,
+      "balanced_accuracy": 0.934674,
+      "average_precision": null,
+      "roc_auc": null,
+      "positives": 62,
+      "predicted_positives": 109,
+      "segment": "drift"
+    },
+    {
+      "detector": "rolling_zscore",
+      "n": 560,
+      "tp": 22,
+      "fp": 1,
+      "tn": 497,
+      "fn": 40,
+      "precision": 0.956522,
+      "recall": 0.354839,
+      "f1": 0.517647,
+      "accuracy": 0.926786,
+      "specificity": 0.997992,
+      "false_positive_rate": 0.002008,
+      "balanced_accuracy": 0.676415,
+      "average_precision": null,
+      "roc_auc": null,
+      "positives": 62,
+      "predicted_positives": 23,
+      "segment": "drift"
+    },
+    {
+      "detector": "isolation_forest",
+      "n": 560,
+      "tp": 36,
+      "fp": 48,
+      "tn": 450,
+      "fn": 26,
+      "precision": 0.428571,
+      "recall": 0.580645,
+      "f1": 0.493151,
+      "accuracy": 0.867857,
+      "specificity": 0.903614,
+      "false_positive_rate": 0.096386,
+      "balanced_accuracy": 0.74213,
+      "average_precision": null,
+      "roc_auc": null,
+      "positives": 62,
+      "predicted_positives": 84,
+      "segment": "drift"
+    },
+    {
+      "detector": "dummy",
+      "n": 560,
+      "tp": 0,
+      "fp": 0,
+      "tn": 498,
+      "fn": 62,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.889286,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "balanced_accuracy": 0.5,
+      "average_precision": null,
+      "roc_auc": null,
+      "positives": 62,
+      "predicted_positives": 0,
+      "segment": "drift"
+    },
+    {
+      "detector": "static_percentile",
+      "n": 840,
+      "tp": 52,
+      "fp": 17,
+      "tn": 771,
+      "fn": 0,
+      "precision": 0.753623,
+      "recall": 1.0,
+      "f1": 0.859504,
+      "accuracy": 0.979762,
+      "specificity": 0.978426,
+      "false_positive_rate": 0.021574,
+      "balanced_accuracy": 0.989213,
+      "average_precision": null,
+      "roc_auc": null,
+      "positives": 52,
+      "predicted_positives": 69,
+      "segment": "pre_drift"
+    },
+    {
+      "detector": "rolling_zscore",
+      "n": 840,
+      "tp": 37,
+      "fp": 2,
+      "tn": 786,
+      "fn": 15,
+      "precision": 0.948718,
+      "recall": 0.711538,
+      "f1": 0.813187,
+      "accuracy": 0.979762,
+      "specificity": 0.997462,
+      "false_positive_rate": 0.002538,
+      "balanced_accuracy": 0.8545,
+      "average_precision": null,
+      "roc_auc": null,
+      "positives": 52,
+      "predicted_positives": 39,
+      "segment": "pre_drift"
+    },
+    {
+      "detector": "isolation_forest",
+      "n": 840,
+      "tp": 17,
+      "fp": 17,
+      "tn": 771,
+      "fn": 35,
+      "precision": 0.5,
+      "recall": 0.326923,
+      "f1": 0.395349,
+      "accuracy": 0.938095,
+      "specificity": 0.978426,
+      "false_positive_rate": 0.021574,
+      "balanced_accuracy": 0.652675,
+      "average_precision": null,
+      "roc_auc": null,
+      "positives": 52,
+      "predicted_positives": 34,
+      "segment": "pre_drift"
+    },
+    {
+      "detector": "dummy",
+      "n": 840,
+      "tp": 0,
+      "fp": 0,
+      "tn": 788,
+      "fn": 52,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.938095,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "balanced_accuracy": 0.5,
+      "average_precision": null,
+      "roc_auc": null,
+      "positives": 52,
+      "predicted_positives": 0,
+      "segment": "pre_drift"
+    }
+  ],
+  "oracle_threshold_sweep": [
+    {
+      "detector": "static_percentile",
+      "threshold": 0.0,
+      "flag_rate": 1.0,
+      "tp": 114,
+      "fp": 1286,
+      "fn": 0,
+      "precision": 0.08142857142857143,
+      "recall": 1.0,
+      "f1": 0.15059445178335537
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.0006911041004149603,
+      "flag_rate": 0.12714285714285714,
+      "tp": 112,
+      "fp": 66,
+      "fn": 2,
+      "precision": 0.6292134831460674,
+      "recall": 0.9824561403508771,
+      "f1": 0.767123287671233
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.020380718980788474,
+      "flag_rate": 0.11928571428571429,
+      "tp": 111,
+      "fp": 56,
+      "fn": 3,
+      "precision": 0.6646706586826348,
+      "recall": 0.9736842105263158,
+      "f1": 0.790035587188612
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.0433575930840979,
+      "flag_rate": 0.11071428571428571,
+      "tp": 111,
+      "fp": 44,
+      "fn": 3,
+      "precision": 0.7161290322580646,
+      "recall": 0.9736842105263158,
+      "f1": 0.8252788104089219
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.07151931809317749,
+      "flag_rate": 0.10285714285714286,
+      "tp": 110,
+      "fp": 34,
+      "fn": 4,
+      "precision": 0.7638888888888888,
+      "recall": 0.9649122807017544,
+      "f1": 0.8527131782945737
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.0919158243121757,
+      "flag_rate": 0.095,
+      "tp": 109,
+      "fp": 24,
+      "fn": 5,
+      "precision": 0.8195488721804511,
+      "recall": 0.956140350877193,
+      "f1": 0.8825910931174088
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.13471535982263952,
+      "flag_rate": 0.08642857142857142,
+      "tp": 108,
+      "fp": 13,
+      "fn": 6,
+      "precision": 0.8925619834710744,
+      "recall": 0.9473684210526315,
+      "f1": 0.9191489361702128
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.2332504081720561,
+      "flag_rate": 0.07857142857142857,
+      "tp": 105,
+      "fp": 5,
+      "fn": 9,
+      "precision": 0.9545454545454546,
+      "recall": 0.9210526315789473,
+      "f1": 0.9375
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.34880012195525456,
+      "flag_rate": 0.07,
+      "tp": 98,
+      "fp": 0,
+      "fn": 16,
+      "precision": 1.0,
+      "recall": 0.8596491228070176,
+      "f1": 0.9245283018867925
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.3768851674881412,
+      "flag_rate": 0.062142857142857146,
+      "tp": 87,
+      "fp": 0,
+      "fn": 27,
+      "precision": 1.0,
+      "recall": 0.7631578947368421,
+      "f1": 0.8656716417910448
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.3935548381145977,
+      "flag_rate": 0.054285714285714284,
+      "tp": 76,
+      "fp": 0,
+      "fn": 38,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.4146569002560164,
+      "flag_rate": 0.045714285714285714,
+      "tp": 64,
+      "fp": 0,
+      "fn": 50,
+      "precision": 1.0,
+      "recall": 0.5614035087719298,
+      "f1": 0.7191011235955056
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.6411504510322322,
+      "flag_rate": 0.03785714285714286,
+      "tp": 53,
+      "fp": 0,
+      "fn": 61,
+      "precision": 1.0,
+      "recall": 0.4649122807017544,
+      "f1": 0.6347305389221557
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.8078372104269274,
+      "flag_rate": 0.03,
+      "tp": 42,
+      "fp": 0,
+      "fn": 72,
+      "precision": 1.0,
+      "recall": 0.3684210526315789,
+      "f1": 0.5384615384615384
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.9355091945390741,
+      "flag_rate": 0.02142857142857143,
+      "tp": 30,
+      "fp": 0,
+      "fn": 84,
+      "precision": 1.0,
+      "recall": 0.2631578947368421,
+      "f1": 0.4166666666666667
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 1.0641319320981546,
+      "flag_rate": 0.013571428571428571,
+      "tp": 19,
+      "fp": 0,
+      "fn": 95,
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 1.2989506910598636,
+      "flag_rate": 0.005,
+      "tp": 7,
+      "fp": 0,
+      "fn": 107,
+      "precision": 1.0,
+      "recall": 0.06140350877192982,
+      "f1": 0.11570247933884298
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 1.6674385528903954,
+      "flag_rate": 0.2,
+      "tp": 106,
+      "fp": 174,
+      "fn": 8,
+      "precision": 0.37857142857142856,
+      "recall": 0.9298245614035088,
+      "f1": 0.5380710659898478
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 1.7131779623523904,
+      "flag_rate": 0.19214285714285714,
+      "tp": 106,
+      "fp": 163,
+      "fn": 8,
+      "precision": 0.3940520446096654,
+      "recall": 0.9298245614035088,
+      "f1": 0.5535248041775458
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 1.7395368530282769,
+      "flag_rate": 0.18428571428571427,
+      "tp": 106,
+      "fp": 152,
+      "fn": 8,
+      "precision": 0.4108527131782946,
+      "recall": 0.9298245614035088,
+      "f1": 0.5698924731182795
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 1.7773317569454798,
+      "flag_rate": 0.1757142857142857,
+      "tp": 105,
+      "fp": 141,
+      "fn": 9,
+      "precision": 0.4268292682926829,
+      "recall": 0.9210526315789473,
+      "f1": 0.5833333333333334
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 1.8059713841739629,
+      "flag_rate": 0.16785714285714284,
+      "tp": 105,
+      "fp": 130,
+      "fn": 9,
+      "precision": 0.44680851063829785,
+      "recall": 0.9210526315789473,
+      "f1": 0.6017191977077364
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 1.859647463191655,
+      "flag_rate": 0.15928571428571428,
+      "tp": 105,
+      "fp": 118,
+      "fn": 9,
+      "precision": 0.47085201793721976,
+      "recall": 0.9210526315789473,
+      "f1": 0.6231454005934718
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 1.889501367334235,
+      "flag_rate": 0.15142857142857144,
+      "tp": 105,
+      "fp": 107,
+      "fn": 9,
+      "precision": 0.49528301886792453,
+      "recall": 0.9210526315789473,
+      "f1": 0.6441717791411044
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 1.9317212364657788,
+      "flag_rate": 0.14357142857142857,
+      "tp": 104,
+      "fp": 97,
+      "fn": 10,
+      "precision": 0.5174129353233831,
+      "recall": 0.9122807017543859,
+      "f1": 0.6603174603174602
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 2.000281490576919,
+      "flag_rate": 0.135,
+      "tp": 104,
+      "fp": 85,
+      "fn": 10,
+      "precision": 0.5502645502645502,
+      "recall": 0.9122807017543859,
+      "f1": 0.6864686468646864
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 2.060430324001047,
+      "flag_rate": 0.12714285714285714,
+      "tp": 104,
+      "fp": 74,
+      "fn": 10,
+      "precision": 0.5842696629213483,
+      "recall": 0.9122807017543859,
+      "f1": 0.7123287671232877
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 2.109482736894113,
+      "flag_rate": 0.11928571428571429,
+      "tp": 102,
+      "fp": 65,
+      "fn": 12,
+      "precision": 0.6107784431137725,
+      "recall": 0.8947368421052632,
+      "f1": 0.7259786476868327
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 2.1751915091248195,
+      "flag_rate": 0.11071428571428571,
+      "tp": 101,
+      "fp": 54,
+      "fn": 13,
+      "precision": 0.6516129032258065,
+      "recall": 0.8859649122807017,
+      "f1": 0.7509293680297398
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 2.28181369165825,
+      "flag_rate": 0.10285714285714286,
+      "tp": 100,
+      "fp": 44,
+      "fn": 14,
+      "precision": 0.6944444444444444,
+      "recall": 0.8771929824561403,
+      "f1": 0.7751937984496124
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 2.4222174985404084,
+      "flag_rate": 0.095,
+      "tp": 98,
+      "fp": 35,
+      "fn": 16,
+      "precision": 0.7368421052631579,
+      "recall": 0.8596491228070176,
+      "f1": 0.7935222672064777
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 2.6319775985341742,
+      "flag_rate": 0.08642857142857142,
+      "tp": 94,
+      "fp": 27,
+      "fn": 20,
+      "precision": 0.7768595041322314,
+      "recall": 0.8245614035087719,
+      "f1": 0.7999999999999999
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 2.7484323829013606,
+      "flag_rate": 0.07857142857142857,
+      "tp": 89,
+      "fp": 21,
+      "fn": 25,
+      "precision": 0.8090909090909091,
+      "recall": 0.7807017543859649,
+      "f1": 0.7946428571428571
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 2.8951775778146844,
+      "flag_rate": 0.07,
+      "tp": 82,
+      "fp": 16,
+      "fn": 32,
+      "precision": 0.8367346938775511,
+      "recall": 0.7192982456140351,
+      "f1": 0.7735849056603773
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 2.982862606758799,
+      "flag_rate": 0.062142857142857146,
+      "tp": 76,
+      "fp": 11,
+      "fn": 38,
+      "precision": 0.8735632183908046,
+      "recall": 0.6666666666666666,
+      "f1": 0.7562189054726368
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 3.1809227989718933,
+      "flag_rate": 0.054285714285714284,
+      "tp": 69,
+      "fp": 7,
+      "fn": 45,
+      "precision": 0.9078947368421053,
+      "recall": 0.6052631578947368,
+      "f1": 0.7263157894736842
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 3.453261116341432,
+      "flag_rate": 0.045714285714285714,
+      "tp": 61,
+      "fp": 3,
+      "fn": 53,
+      "precision": 0.953125,
+      "recall": 0.5350877192982456,
+      "f1": 0.6853932584269662
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 3.8456855378800485,
+      "flag_rate": 0.03785714285714286,
+      "tp": 52,
+      "fp": 1,
+      "fn": 62,
+      "precision": 0.9811320754716981,
+      "recall": 0.45614035087719296,
+      "f1": 0.6227544910179641
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 4.075232527593496,
+      "flag_rate": 0.03,
+      "tp": 42,
+      "fp": 0,
+      "fn": 72,
+      "precision": 1.0,
+      "recall": 0.3684210526315789,
+      "f1": 0.5384615384615384
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 4.545004633019694,
+      "flag_rate": 0.02142857142857143,
+      "tp": 30,
+      "fp": 0,
+      "fn": 84,
+      "precision": 1.0,
+      "recall": 0.2631578947368421,
+      "f1": 0.4166666666666667
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 5.306883933180757,
+      "flag_rate": 0.013571428571428571,
+      "tp": 19,
+      "fp": 0,
+      "fn": 95,
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 6.615176187901042,
+      "flag_rate": 0.005,
+      "tp": 7,
+      "fp": 0,
+      "fn": 107,
+      "precision": 1.0,
+      "recall": 0.06140350877192982,
+      "f1": 0.11570247933884298
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.5581634649583385,
+      "flag_rate": 0.2,
+      "tp": 109,
+      "fp": 171,
+      "fn": 5,
+      "precision": 0.3892857142857143,
+      "recall": 0.956140350877193,
+      "f1": 0.5532994923857868
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.5611141191430454,
+      "flag_rate": 0.19214285714285714,
+      "tp": 107,
+      "fp": 162,
+      "fn": 7,
+      "precision": 0.39776951672862454,
+      "recall": 0.9385964912280702,
+      "f1": 0.5587467362924282
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.5659969862427108,
+      "flag_rate": 0.18428571428571427,
+      "tp": 105,
+      "fp": 153,
+      "fn": 9,
+      "precision": 0.4069767441860465,
+      "recall": 0.9210526315789473,
+      "f1": 0.564516129032258
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.573255417408022,
+      "flag_rate": 0.1757142857142857,
+      "tp": 100,
+      "fp": 146,
+      "fn": 14,
+      "precision": 0.4065040650406504,
+      "recall": 0.8771929824561403,
+      "f1": 0.5555555555555556
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.5771747129225623,
+      "flag_rate": 0.16785714285714284,
+      "tp": 97,
+      "fp": 138,
+      "fn": 17,
+      "precision": 0.4127659574468085,
+      "recall": 0.8508771929824561,
+      "f1": 0.5558739255014327
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.5835207002530372,
+      "flag_rate": 0.15928571428571428,
+      "tp": 93,
+      "fp": 130,
+      "fn": 21,
+      "precision": 0.4170403587443946,
+      "recall": 0.8157894736842105,
+      "f1": 0.5519287833827893
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.5883747848228472,
+      "flag_rate": 0.15142857142857144,
+      "tp": 91,
+      "fp": 121,
+      "fn": 23,
+      "precision": 0.42924528301886794,
+      "recall": 0.7982456140350878,
+      "f1": 0.558282208588957
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.5944373685784573,
+      "flag_rate": 0.14357142857142857,
+      "tp": 90,
+      "fp": 111,
+      "fn": 24,
+      "precision": 0.44776119402985076,
+      "recall": 0.7894736842105263,
+      "f1": 0.5714285714285714
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.5999620895295835,
+      "flag_rate": 0.135,
+      "tp": 86,
+      "fp": 103,
+      "fn": 28,
+      "precision": 0.455026455026455,
+      "recall": 0.7543859649122807,
+      "f1": 0.5676567656765676
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6051627698652604,
+      "flag_rate": 0.12714285714285714,
+      "tp": 80,
+      "fp": 98,
+      "fn": 34,
+      "precision": 0.449438202247191,
+      "recall": 0.7017543859649122,
+      "f1": 0.547945205479452
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6117799095437413,
+      "flag_rate": 0.11928571428571429,
+      "tp": 76,
+      "fp": 91,
+      "fn": 38,
+      "precision": 0.4550898203592814,
+      "recall": 0.6666666666666666,
+      "f1": 0.5409252669039146
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6162021864284382,
+      "flag_rate": 0.11071428571428571,
+      "tp": 70,
+      "fp": 85,
+      "fn": 44,
+      "precision": 0.45161290322580644,
+      "recall": 0.6140350877192983,
+      "f1": 0.5204460966542751
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6222957839675922,
+      "flag_rate": 0.10285714285714286,
+      "tp": 67,
+      "fp": 77,
+      "fn": 47,
+      "precision": 0.4652777777777778,
+      "recall": 0.5877192982456141,
+      "f1": 0.5193798449612403
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6269264158798011,
+      "flag_rate": 0.095,
+      "tp": 62,
+      "fp": 71,
+      "fn": 52,
+      "precision": 0.46616541353383456,
+      "recall": 0.543859649122807,
+      "f1": 0.5020242914979757
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6330403867676669,
+      "flag_rate": 0.08642857142857142,
+      "tp": 56,
+      "fp": 65,
+      "fn": 58,
+      "precision": 0.4628099173553719,
+      "recall": 0.49122807017543857,
+      "f1": 0.47659574468085103
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6404218129933137,
+      "flag_rate": 0.07857142857142857,
+      "tp": 49,
+      "fp": 61,
+      "fn": 65,
+      "precision": 0.44545454545454544,
+      "recall": 0.4298245614035088,
+      "f1": 0.4375
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6483944096635801,
+      "flag_rate": 0.07,
+      "tp": 43,
+      "fp": 55,
+      "fn": 71,
+      "precision": 0.4387755102040816,
+      "recall": 0.37719298245614036,
+      "f1": 0.4056603773584906
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6561041330472944,
+      "flag_rate": 0.062142857142857146,
+      "tp": 37,
+      "fp": 50,
+      "fn": 77,
+      "precision": 0.42528735632183906,
+      "recall": 0.32456140350877194,
+      "f1": 0.36815920398009955
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.660855573011269,
+      "flag_rate": 0.054285714285714284,
+      "tp": 33,
+      "fp": 43,
+      "fn": 81,
+      "precision": 0.4342105263157895,
+      "recall": 0.2894736842105263,
+      "f1": 0.3473684210526316
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6658130316594045,
+      "flag_rate": 0.045714285714285714,
+      "tp": 26,
+      "fp": 38,
+      "fn": 88,
+      "precision": 0.40625,
+      "recall": 0.22807017543859648,
+      "f1": 0.29213483146067415
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.670621297793575,
+      "flag_rate": 0.03785714285714286,
+      "tp": 18,
+      "fp": 35,
+      "fn": 96,
+      "precision": 0.33962264150943394,
+      "recall": 0.15789473684210525,
+      "f1": 0.21556886227544908
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6791461471977693,
+      "flag_rate": 0.03,
+      "tp": 14,
+      "fp": 28,
+      "fn": 100,
+      "precision": 0.3333333333333333,
+      "recall": 0.12280701754385964,
+      "f1": 0.1794871794871795
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.6901030123879558,
+      "flag_rate": 0.02142857142857143,
+      "tp": 6,
+      "fp": 24,
+      "fn": 108,
+      "precision": 0.2,
+      "recall": 0.05263157894736842,
+      "f1": 0.08333333333333333
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.7047823702057936,
+      "flag_rate": 0.013571428571428571,
+      "tp": 5,
+      "fp": 14,
+      "fn": 109,
+      "precision": 0.2631578947368421,
+      "recall": 0.043859649122807015,
+      "f1": 0.07518796992481204
+    },
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.738231332238424,
+      "flag_rate": 0.0064285714285714285,
+      "tp": 2,
+      "fp": 7,
+      "fn": 112,
+      "precision": 0.2222222222222222,
+      "recall": 0.017543859649122806,
+      "f1": 0.032520325203252036
+    }
+  ],
+  "oracle_best_operating_point": [
+    {
+      "detector": "isolation_forest",
+      "threshold": 0.5944373685784573,
+      "flag_rate": 0.14357142857142857,
+      "tp": 90,
+      "fp": 111,
+      "fn": 24,
+      "precision": 0.44776119402985076,
+      "recall": 0.7894736842105263,
+      "f1": 0.5714285714285714
+    },
+    {
+      "detector": "rolling_zscore",
+      "threshold": 2.6319775985341742,
+      "flag_rate": 0.08642857142857142,
+      "tp": 94,
+      "fp": 27,
+      "fn": 20,
+      "precision": 0.7768595041322314,
+      "recall": 0.8245614035087719,
+      "f1": 0.7999999999999999
+    },
+    {
+      "detector": "static_percentile",
+      "threshold": 0.2332504081720561,
+      "flag_rate": 0.07857142857142857,
+      "tp": 105,
+      "fp": 5,
+      "fn": 9,
+      "precision": 0.9545454545454546,
+      "recall": 0.9210526315789473,
+      "f1": 0.9375
+    }
+  ],
+  "metadata": {
+    "data_origin": "simulated",
+    "simulated": true,
+    "seed": 20261016,
+    "n_reference": 1200,
+    "n_stream": 1400,
+    "n_anomaly_events": 24,
+    "n_anomaly_rows": 114,
+    "anomaly_rate": 0.081429,
+    "drift_enabled": true,
+    "drift_rows": 560,
+    "drift_component": "mean_and_noise_shift",
+    "drift_start_timestamp": "2026-01-02 10:00:00",
+    "reference_scale": {
+      "latency_ms": 16.427662,
+      "cpu_util": 0.057199,
+      "mem_util": 0.019724,
+      "request_rate": 143.423487
+    },
+    "features": [
+      "latency_ms",
+      "cpu_util",
+      "mem_util",
+      "request_rate"
+    ],
+    "feature_units": {
+      "latency_ms": "ms",
+      "cpu_util": "fraction of capacity",
+      "mem_util": "fraction of capacity",
+      "request_rate": "requests/second"
+    },
+    "interval_seconds": 60,
+    "anomaly_events": [
+      {
+        "anomaly_id": 1,
+        "kind": "dropout",
+        "start_index": 1555,
+        "stop_index": 1562,
+        "start_position": 355,
+        "duration": 8,
+        "magnitude_sigma": 4.997,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 01:55:00"
+      },
+      {
+        "anomaly_id": 2,
+        "kind": "spike",
+        "start_index": 1444,
+        "stop_index": 1446,
+        "start_position": 244,
+        "duration": 3,
+        "magnitude_sigma": 6.608,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-02 00:04:00"
+      },
+      {
+        "anomaly_id": 3,
+        "kind": "dropout",
+        "start_index": 2463,
+        "stop_index": 2466,
+        "start_position": 1263,
+        "duration": 4,
+        "magnitude_sigma": 3.29,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 17:03:00"
+      },
+      {
+        "anomaly_id": 4,
+        "kind": "burst",
+        "start_index": 1492,
+        "stop_index": 1495,
+        "start_position": 292,
+        "duration": 4,
+        "magnitude_sigma": 7.409,
+        "features": [
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 00:52:00"
+      },
+      {
+        "anomaly_id": 5,
+        "kind": "spike",
+        "start_index": 2149,
+        "stop_index": 2151,
+        "start_position": 949,
+        "duration": 3,
+        "magnitude_sigma": 4.714,
+        "features": [
+          "mem_util",
+          "request_rate"
+        ],
+        "timestamp": "2026-01-02 11:49:00"
+      },
+      {
+        "anomaly_id": 6,
+        "kind": "spike",
+        "start_index": 2245,
+        "stop_index": 2245,
+        "start_position": 1045,
+        "duration": 1,
+        "magnitude_sigma": 8.95,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-02 13:25:00"
+      },
+      {
+        "anomaly_id": 7,
+        "kind": "burst",
+        "start_index": 2121,
+        "stop_index": 2125,
+        "start_position": 921,
+        "duration": 5,
+        "magnitude_sigma": 6.914,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-02 11:21:00"
+      },
+      {
+        "anomaly_id": 8,
+        "kind": "burst",
+        "start_index": 2004,
+        "stop_index": 2007,
+        "start_position": 804,
+        "duration": 4,
+        "magnitude_sigma": 5.631,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-02 09:24:00"
+      },
+      {
+        "anomaly_id": 9,
+        "kind": "dropout",
+        "start_index": 2349,
+        "stop_index": 2352,
+        "start_position": 1149,
+        "duration": 4,
+        "magnitude_sigma": 4.849,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 15:09:00"
+      },
+      {
+        "anomaly_id": 10,
+        "kind": "latency_storm",
+        "start_index": 2320,
+        "stop_index": 2327,
+        "start_position": 1120,
+        "duration": 8,
+        "magnitude_sigma": 6.276,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-02 14:40:00"
+      },
+      {
+        "anomaly_id": 11,
+        "kind": "burst",
+        "start_index": 2069,
+        "stop_index": 2072,
+        "start_position": 869,
+        "duration": 4,
+        "magnitude_sigma": 6.552,
+        "features": [
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 10:29:00"
+      },
+      {
+        "anomaly_id": 12,
+        "kind": "latency_storm",
+        "start_index": 1315,
+        "stop_index": 1319,
+        "start_position": 115,
+        "duration": 5,
+        "magnitude_sigma": 7.561,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-01 21:55:00"
+      },
+      {
+        "anomaly_id": 13,
+        "kind": "burst",
+        "start_index": 2201,
+        "stop_index": 2207,
+        "start_position": 1001,
+        "duration": 7,
+        "magnitude_sigma": 8.672,
+        "features": [
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 12:41:00"
+      },
+      {
+        "anomaly_id": 14,
+        "kind": "latency_storm",
+        "start_index": 1886,
+        "stop_index": 1886,
+        "start_position": 686,
+        "duration": 1,
+        "magnitude_sigma": 5.069,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-02 07:26:00"
+      },
+      {
+        "anomaly_id": 15,
+        "kind": "dropout",
+        "start_index": 1928,
+        "stop_index": 1933,
+        "start_position": 728,
+        "duration": 6,
+        "magnitude_sigma": 4.501,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 08:08:00"
+      },
+      {
+        "anomaly_id": 16,
+        "kind": "dropout",
+        "start_index": 2470,
+        "stop_index": 2473,
+        "start_position": 1270,
+        "duration": 4,
+        "magnitude_sigma": 5.288,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 17:10:00"
+      },
+      {
+        "anomaly_id": 17,
+        "kind": "burst",
+        "start_index": 1767,
+        "stop_index": 1770,
+        "start_position": 567,
+        "duration": 4,
+        "magnitude_sigma": 7.806,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-02 05:27:00"
+      },
+      {
+        "anomaly_id": 18,
+        "kind": "burst",
+        "start_index": 1965,
+        "stop_index": 1970,
+        "start_position": 765,
+        "duration": 6,
+        "magnitude_sigma": 8.908,
+        "features": [
+          "request_rate"
+        ],
+        "timestamp": "2026-01-02 08:45:00"
+      },
+      {
+        "anomaly_id": 19,
+        "kind": "latency_storm",
+        "start_index": 2160,
+        "stop_index": 2166,
+        "start_position": 960,
+        "duration": 7,
+        "magnitude_sigma": 2.632,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-02 12:00:00"
+      },
+      {
+        "anomaly_id": 20,
+        "kind": "latency_storm",
+        "start_index": 2419,
+        "stop_index": 2420,
+        "start_position": 1219,
+        "duration": 2,
+        "magnitude_sigma": 8.392,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-02 16:19:00"
+      },
+      {
+        "anomaly_id": 21,
+        "kind": "latency_storm",
+        "start_index": 2335,
+        "stop_index": 2339,
+        "start_position": 1135,
+        "duration": 5,
+        "magnitude_sigma": 4.519,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-02 14:55:00"
+      },
+      {
+        "anomaly_id": 22,
+        "kind": "burst",
+        "start_index": 1361,
+        "stop_index": 1364,
+        "start_position": 161,
+        "duration": 4,
+        "magnitude_sigma": 4.44,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-01 22:41:00"
+      },
+      {
+        "anomaly_id": 23,
+        "kind": "burst",
+        "start_index": 1792,
+        "stop_index": 1798,
+        "start_position": 592,
+        "duration": 7,
+        "magnitude_sigma": 3.917,
+        "features": [
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 05:52:00"
+      },
+      {
+        "anomaly_id": 24,
+        "kind": "dropout",
+        "start_index": 2535,
+        "stop_index": 2542,
+        "start_position": 1335,
+        "duration": 8,
+        "magnitude_sigma": 4.226,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 18:15:00"
+      }
+    ],
+    "config": {
+      "seed": 20261016,
+      "n_reference": 1200,
+      "n_stream": 1400,
+      "interval_seconds": 60,
+      "cycle_points": 48,
+      "start_timestamp": "2026-01-01T00:00:00",
+      "ar1_phi": 0.35,
+      "load_sigma": 1.0,
+      "multiplicative": [
+        "latency_ms",
+        "request_rate"
+      ],
+      "anomaly_fraction_pre_drift": 0.7,
+      "n_point_anomalies": 24,
+      "anomaly_min_len": 1,
+      "anomaly_max_len": 8,
+      "anomaly_sigma_low": 2.6,
+      "anomaly_sigma_high": 9.0,
+      "anomaly_kinds": [
+        "spike",
+        "burst",
+        "dropout",
+        "latency_storm"
+      ],
+      "baselines": {
+        "latency_ms": 118.0,
+        "cpu_util": 0.46,
+        "mem_util": 0.58,
+        "request_rate": 640.0
+      },
+      "noise": {
+        "latency_ms": 0.05,
+        "cpu_util": 0.028,
+        "mem_util": 0.005,
+        "request_rate": 0.05
+      },
+      "diurnal_amplitude": {
+        "latency_ms": 0.06,
+        "cpu_util": 0.08,
+        "mem_util": 0.015,
+        "request_rate": 0.2
+      },
+      "load_sensitivity": {
+        "latency_ms": 0.12,
+        "cpu_util": 0.1,
+        "mem_util": 0.03,
+        "request_rate": 0.15
+      },
+      "shift": {
+        "enabled": true,
+        "start_fraction": 0.6,
+        "latency_mult": 1.18,
+        "cpu_delta": 0.055,
+        "mem_delta": 0.018,
+        "request_rate_mult": 1.1,
+        "noise_mult": 1.15,
+        "component": "mean_and_noise_shift"
+      }
+    }
+  },
+  "notes": [
+    "All observations are simulated; these numbers are not real-world performance claims.",
+    "Detector fitting used the anomaly-free reference block only; stream labels were used for scoring only.",
+    "Injected distribution shift is not labelled as a point anomaly, so flags inside the shifted period count as false positives for detectors that cannot adapt. See segment_metrics.",
+    "oracle_threshold_sweep picks each threshold using the labels and is a diagnostic upper bound, not a procedure that may be deployed."
+  ],
+  "drift": {
+    "windows_evaluated": 7,
+    "windows_with_drift": 3,
+    "alpha": 0.01,
+    "correction": "holm",
+    "window_size": 200,
+    "min_window_size": 120,
+    "effect_size_floor": 0.2,
+    "summary": [
+      {
+        "window_id": 0,
+        "start_position": 0,
+        "start_timestamp": "2026-01-01 20:00:00",
+        "end_timestamp": "2026-01-01 23:19:00",
+        "n_window": 200,
+        "evaluated": true,
+        "any_drift": false,
+        "drifted_features": "",
+        "n_drifted": 0,
+        "max_ks_statistic": 0.06083333333333332,
+        "severity": "low",
+        "reason": "no drift: largest KS statistic 0.061 below effect-size floor or p_adj >= 0.01"
+      },
+      {
+        "window_id": 1,
+        "start_position": 200,
+        "start_timestamp": "2026-01-01 23:20:00",
+        "end_timestamp": "2026-01-02 02:39:00",
+        "n_window": 200,
+        "evaluated": true,
+        "any_drift": false,
+        "drifted_features": "",
+        "n_drifted": 0,
+        "max_ks_statistic": 0.10000000000000003,
+        "severity": "low",
+        "reason": "no drift: largest KS statistic 0.100 below effect-size floor or p_adj >= 0.01"
+      },
+      {
+        "window_id": 2,
+        "start_position": 400,
+        "start_timestamp": "2026-01-02 02:40:00",
+        "end_timestamp": "2026-01-02 05:59:00",
+        "n_window": 200,
+        "evaluated": true,
+        "any_drift": false,
+        "drifted_features": "",
+        "n_drifted": 0,
+        "max_ks_statistic": 0.12416666666666665,
+        "severity": "low",
+        "reason": "no drift: largest KS statistic 0.124 below effect-size floor or p_adj >= 0.01"
+      },
+      {
+        "window_id": 3,
+        "start_position": 600,
+        "start_timestamp": "2026-01-02 06:00:00",
+        "end_timestamp": "2026-01-02 09:19:00",
+        "n_window": 200,
+        "evaluated": true,
+        "any_drift": false,
+        "drifted_features": "",
+        "n_drifted": 0,
+        "max_ks_statistic": 0.10416666666666674,
+        "severity": "low",
+        "reason": "no drift: largest KS statistic 0.104 below effect-size floor or p_adj >= 0.01"
+      },
+      {
+        "window_id": 4,
+        "start_position": 800,
+        "start_timestamp": "2026-01-02 09:20:00",
+        "end_timestamp": "2026-01-02 12:39:00",
+        "n_window": 200,
+        "evaluated": true,
+        "any_drift": true,
+        "drifted_features": "latency_ms,cpu_util,mem_util",
+        "n_drifted": 3,
+        "max_ks_statistic": 0.4175000000000001,
+        "severity": "critical",
+        "reason": "KS two-sample vs reference (n=1200) on 200-point window, Holm-adjusted alpha=0.01: latency_ms D=0.418 (p_adj=8.61e-27), 3/4 features drifted, largest mean shift latency_ms +18.5%"
+      },
+      {
+        "window_id": 5,
+        "start_position": 1000,
+        "start_timestamp": "2026-01-02 12:40:00",
+        "end_timestamp": "2026-01-02 15:59:00",
+        "n_window": 200,
+        "evaluated": true,
+        "any_drift": true,
+        "drifted_features": "latency_ms,cpu_util,mem_util",
+        "n_drifted": 3,
+        "max_ks_statistic": 0.5341666666666667,
+        "severity": "critical",
+        "reason": "KS two-sample vs reference (n=1200) on 200-point window, Holm-adjusted alpha=0.01: latency_ms D=0.534 (p_adj=4.15e-45), 3/4 features drifted, largest mean shift latency_ms +30.0%"
+      },
+      {
+        "window_id": 6,
+        "start_position": 1200,
+        "start_timestamp": "2026-01-02 16:00:00",
+        "end_timestamp": "2026-01-02 19:19:00",
+        "n_window": 200,
+        "evaluated": true,
+        "any_drift": true,
+        "drifted_features": "latency_ms,cpu_util,mem_util",
+        "n_drifted": 3,
+        "max_ks_statistic": 0.5316666666666667,
+        "severity": "critical",
+        "reason": "KS two-sample vs reference (n=1200) on 200-point window, Holm-adjusted alpha=0.01: latency_ms D=0.532 (p_adj=1.17e-44), 3/4 features drifted, largest mean shift latency_ms +21.6%"
+      }
+    ]
+  }
+}

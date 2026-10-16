@@ -1,0 +1,54 @@
+# StreamGuard default configuration.
+# Every value here is recorded verbatim in reports/metrics/run_metadata.json for
+# the run that produced the published metrics. All data is SIMULATED.
+
+output_dir = "reports"
+alert_state_path = "data/processed/alert_state.json"
+
+[simulator]
+seed = 20261016
+n_reference = 1200          # anomaly-free block used to fit detectors
+n_stream = 1400             # block that is scored, drift-scanned and evaluated
+interval_seconds = 60
+cycle_points = 48           # period of the recurring usage cycle, in observations
+start_timestamp = "2026-01-01T00:00:00"
+ar1_phi = 0.35              # moderate autocorrelation (see LIMITATIONS.md)
+load_sigma = 1.0
+anomaly_fraction_pre_drift = 0.7
+n_point_anomalies = 24
+anomaly_min_len = 1
+anomaly_max_len = 8
+anomaly_sigma_low = 2.6
+anomaly_sigma_high = 9.0
+anomaly_kinds = ["spike", "burst", "dropout", "latency_storm"]
+
+[simulator.shift]
+enabled = true
+start_fraction = 0.60       # 40% of the stream is drawn from the shifted regime
+latency_mult = 1.18
+cpu_delta = 0.055
+mem_delta = 0.018
+request_rate_mult = 1.10
+noise_mult = 1.15
+component = "mean_and_noise_shift"
+
+[detector]
+features = ["latency_ms", "cpu_util", "mem_util", "request_rate"]
+zscore_window = 120
+zscore_threshold = 3.5
+zscore_min_periods = 30
+contamination = 0.02
+if_n_estimators = 200
+if_random_state = 20261016
+if_severity_sigma = [2.0, 3.0, 4.0]
+static_threshold_quantile = 0.995
+
+[drift]
+features = ["latency_ms", "cpu_util", "mem_util", "request_rate"]
+window_size = 200
+step = 200
+alpha = 0.01
+correction = "holm"
+min_window_size = 120
+psi_bins = 10
+effect_size_floor = 0.20

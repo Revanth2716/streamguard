@@ -1,0 +1,522 @@
+{
+  "data_origin": "simulated",
+  "config": {
+    "simulator": {
+      "seed": 20261016,
+      "n_reference": 1200,
+      "n_stream": 1400,
+      "interval_seconds": 60,
+      "cycle_points": 48,
+      "start_timestamp": "2026-01-01T00:00:00",
+      "ar1_phi": 0.35,
+      "load_sigma": 1.0,
+      "multiplicative": [
+        "latency_ms",
+        "request_rate"
+      ],
+      "anomaly_fraction_pre_drift": 0.7,
+      "n_point_anomalies": 24,
+      "anomaly_min_len": 1,
+      "anomaly_max_len": 8,
+      "anomaly_sigma_low": 2.6,
+      "anomaly_sigma_high": 9.0,
+      "anomaly_kinds": [
+        "spike",
+        "burst",
+        "dropout",
+        "latency_storm"
+      ],
+      "baselines": {
+        "latency_ms": 118.0,
+        "cpu_util": 0.46,
+        "mem_util": 0.58,
+        "request_rate": 640.0
+      },
+      "noise": {
+        "latency_ms": 0.05,
+        "cpu_util": 0.028,
+        "mem_util": 0.005,
+        "request_rate": 0.05
+      },
+      "diurnal_amplitude": {
+        "latency_ms": 0.06,
+        "cpu_util": 0.08,
+        "mem_util": 0.015,
+        "request_rate": 0.2
+      },
+      "load_sensitivity": {
+        "latency_ms": 0.12,
+        "cpu_util": 0.1,
+        "mem_util": 0.03,
+        "request_rate": 0.15
+      },
+      "shift": {
+        "enabled": true,
+        "start_fraction": 0.6,
+        "latency_mult": 1.18,
+        "cpu_delta": 0.055,
+        "mem_delta": 0.018,
+        "request_rate_mult": 1.1,
+        "noise_mult": 1.15,
+        "component": "mean_and_noise_shift"
+      }
+    },
+    "detector": {
+      "features": [
+        "latency_ms",
+        "cpu_util",
+        "mem_util",
+        "request_rate"
+      ],
+      "zscore_window": 120,
+      "zscore_threshold": 3.5,
+      "zscore_min_periods": 30,
+      "contamination": 0.02,
+      "if_n_estimators": 200,
+      "if_random_state": 20261016,
+      "if_severity_sigma": [
+        2.0,
+        3.0,
+        4.0
+      ],
+      "static_threshold_quantile": 0.995
+    },
+    "drift": {
+      "features": [
+        "latency_ms",
+        "cpu_util",
+        "mem_util",
+        "request_rate"
+      ],
+      "window_size": 200,
+      "step": 200,
+      "alpha": 0.01,
+      "correction": "holm",
+      "min_window_size": 120,
+      "psi_bins": 10,
+      "effect_size_floor": 0.2
+    },
+    "output_dir": "reports",
+    "alert_state_path": "data/processed/alert_state.json"
+  },
+  "dataset_metadata": {
+    "data_origin": "simulated",
+    "simulated": true,
+    "seed": 20261016,
+    "n_reference": 1200,
+    "n_stream": 1400,
+    "n_anomaly_events": 24,
+    "n_anomaly_rows": 114,
+    "anomaly_rate": 0.081429,
+    "drift_enabled": true,
+    "drift_rows": 560,
+    "drift_component": "mean_and_noise_shift",
+    "drift_start_timestamp": "2026-01-02 10:00:00",
+    "reference_scale": {
+      "latency_ms": 16.427662,
+      "cpu_util": 0.057199,
+      "mem_util": 0.019724,
+      "request_rate": 143.423487
+    },
+    "features": [
+      "latency_ms",
+      "cpu_util",
+      "mem_util",
+      "request_rate"
+    ],
+    "feature_units": {
+      "latency_ms": "ms",
+      "cpu_util": "fraction of capacity",
+      "mem_util": "fraction of capacity",
+      "request_rate": "requests/second"
+    },
+    "interval_seconds": 60,
+    "anomaly_events": [
+      {
+        "anomaly_id": 1,
+        "kind": "dropout",
+        "start_index": 1555,
+        "stop_index": 1562,
+        "start_position": 355,
+        "duration": 8,
+        "magnitude_sigma": 4.997,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 01:55:00"
+      },
+      {
+        "anomaly_id": 2,
+        "kind": "spike",
+        "start_index": 1444,
+        "stop_index": 1446,
+        "start_position": 244,
+        "duration": 3,
+        "magnitude_sigma": 6.608,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-02 00:04:00"
+      },
+      {
+        "anomaly_id": 3,
+        "kind": "dropout",
+        "start_index": 2463,
+        "stop_index": 2466,
+        "start_position": 1263,
+        "duration": 4,
+        "magnitude_sigma": 3.29,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 17:03:00"
+      },
+      {
+        "anomaly_id": 4,
+        "kind": "burst",
+        "start_index": 1492,
+        "stop_index": 1495,
+        "start_position": 292,
+        "duration": 4,
+        "magnitude_sigma": 7.409,
+        "features": [
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 00:52:00"
+      },
+      {
+        "anomaly_id": 5,
+        "kind": "spike",
+        "start_index": 2149,
+        "stop_index": 2151,
+        "start_position": 949,
+        "duration": 3,
+        "magnitude_sigma": 4.714,
+        "features": [
+          "mem_util",
+          "request_rate"
+        ],
+        "timestamp": "2026-01-02 11:49:00"
+      },
+      {
+        "anomaly_id": 6,
+        "kind": "spike",
+        "start_index": 2245,
+        "stop_index": 2245,
+        "start_position": 1045,
+        "duration": 1,
+        "magnitude_sigma": 8.95,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-02 13:25:00"
+      },
+      {
+        "anomaly_id": 7,
+        "kind": "burst",
+        "start_index": 2121,
+        "stop_index": 2125,
+        "start_position": 921,
+        "duration": 5,
+        "magnitude_sigma": 6.914,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-02 11:21:00"
+      },
+      {
+        "anomaly_id": 8,
+        "kind": "burst",
+        "start_index": 2004,
+        "stop_index": 2007,
+        "start_position": 804,
+        "duration": 4,
+        "magnitude_sigma": 5.631,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-02 09:24:00"
+      },
+      {
+        "anomaly_id": 9,
+        "kind": "dropout",
+        "start_index": 2349,
+        "stop_index": 2352,
+        "start_position": 1149,
+        "duration": 4,
+        "magnitude_sigma": 4.849,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 15:09:00"
+      },
+      {
+        "anomaly_id": 10,
+        "kind": "latency_storm",
+        "start_index": 2320,
+        "stop_index": 2327,
+        "start_position": 1120,
+        "duration": 8,
+        "magnitude_sigma": 6.276,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-02 14:40:00"
+      },
+      {
+        "anomaly_id": 11,
+        "kind": "burst",
+        "start_index": 2069,
+        "stop_index": 2072,
+        "start_position": 869,
+        "duration": 4,
+        "magnitude_sigma": 6.552,
+        "features": [
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 10:29:00"
+      },
+      {
+        "anomaly_id": 12,
+        "kind": "latency_storm",
+        "start_index": 1315,
+        "stop_index": 1319,
+        "start_position": 115,
+        "duration": 5,
+        "magnitude_sigma": 7.561,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-01 21:55:00"
+      },
+      {
+        "anomaly_id": 13,
+        "kind": "burst",
+        "start_index": 2201,
+        "stop_index": 2207,
+        "start_position": 1001,
+        "duration": 7,
+        "magnitude_sigma": 8.672,
+        "features": [
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 12:41:00"
+      },
+      {
+        "anomaly_id": 14,
+        "kind": "latency_storm",
+        "start_index": 1886,
+        "stop_index": 1886,
+        "start_position": 686,
+        "duration": 1,
+        "magnitude_sigma": 5.069,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-02 07:26:00"
+      },
+      {
+        "anomaly_id": 15,
+        "kind": "dropout",
+        "start_index": 1928,
+        "stop_index": 1933,
+        "start_position": 728,
+        "duration": 6,
+        "magnitude_sigma": 4.501,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 08:08:00"
+      },
+      {
+        "anomaly_id": 16,
+        "kind": "dropout",
+        "start_index": 2470,
+        "stop_index": 2473,
+        "start_position": 1270,
+        "duration": 4,
+        "magnitude_sigma": 5.288,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 17:10:00"
+      },
+      {
+        "anomaly_id": 17,
+        "kind": "burst",
+        "start_index": 1767,
+        "stop_index": 1770,
+        "start_position": 567,
+        "duration": 4,
+        "magnitude_sigma": 7.806,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-02 05:27:00"
+      },
+      {
+        "anomaly_id": 18,
+        "kind": "burst",
+        "start_index": 1965,
+        "stop_index": 1970,
+        "start_position": 765,
+        "duration": 6,
+        "magnitude_sigma": 8.908,
+        "features": [
+          "request_rate"
+        ],
+        "timestamp": "2026-01-02 08:45:00"
+      },
+      {
+        "anomaly_id": 19,
+        "kind": "latency_storm",
+        "start_index": 2160,
+        "stop_index": 2166,
+        "start_position": 960,
+        "duration": 7,
+        "magnitude_sigma": 2.632,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-02 12:00:00"
+      },
+      {
+        "anomaly_id": 20,
+        "kind": "latency_storm",
+        "start_index": 2419,
+        "stop_index": 2420,
+        "start_position": 1219,
+        "duration": 2,
+        "magnitude_sigma": 8.392,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-02 16:19:00"
+      },
+      {
+        "anomaly_id": 21,
+        "kind": "latency_storm",
+        "start_index": 2335,
+        "stop_index": 2339,
+        "start_position": 1135,
+        "duration": 5,
+        "magnitude_sigma": 4.519,
+        "features": [
+          "latency_ms",
+          "cpu_util"
+        ],
+        "timestamp": "2026-01-02 14:55:00"
+      },
+      {
+        "anomaly_id": 22,
+        "kind": "burst",
+        "start_index": 1361,
+        "stop_index": 1364,
+        "start_position": 161,
+        "duration": 4,
+        "magnitude_sigma": 4.44,
+        "features": [
+          "mem_util"
+        ],
+        "timestamp": "2026-01-01 22:41:00"
+      },
+      {
+        "anomaly_id": 23,
+        "kind": "burst",
+        "start_index": 1792,
+        "stop_index": 1798,
+        "start_position": 592,
+        "duration": 7,
+        "magnitude_sigma": 3.917,
+        "features": [
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 05:52:00"
+      },
+      {
+        "anomaly_id": 24,
+        "kind": "dropout",
+        "start_index": 2535,
+        "stop_index": 2542,
+        "start_position": 1335,
+        "duration": 8,
+        "magnitude_sigma": 4.226,
+        "features": [
+          "request_rate",
+          "latency_ms"
+        ],
+        "timestamp": "2026-01-02 18:15:00"
+      }
+    ],
+    "config": {
+      "seed": 20261016,
+      "n_reference": 1200,
+      "n_stream": 1400,
+      "interval_seconds": 60,
+      "cycle_points": 48,
+      "start_timestamp": "2026-01-01T00:00:00",
+      "ar1_phi": 0.35,
+      "load_sigma": 1.0,
+      "multiplicative": [
+        "latency_ms",
+        "request_rate"
+      ],
+      "anomaly_fraction_pre_drift": 0.7,
+      "n_point_anomalies": 24,
+      "anomaly_min_len": 1,
+      "anomaly_max_len": 8,
+      "anomaly_sigma_low": 2.6,
+      "anomaly_sigma_high": 9.0,
+      "anomaly_kinds": [
+        "spike",
+        "burst",
+        "dropout",
+        "latency_storm"
+      ],
+      "baselines": {
+        "latency_ms": 118.0,
+        "cpu_util": 0.46,
+        "mem_util": 0.58,
+        "request_rate": 640.0
+      },
+      "noise": {
+        "latency_ms": 0.05,
+        "cpu_util": 0.028,
+        "mem_util": 0.005,
+        "request_rate": 0.05
+      },
+      "diurnal_amplitude": {
+        "latency_ms": 0.06,
+        "cpu_util": 0.08,
+        "mem_util": 0.015,
+        "request_rate": 0.2
+      },
+      "load_sensitivity": {
+        "latency_ms": 0.12,
+        "cpu_util": 0.1,
+        "mem_util": 0.03,
+        "request_rate": 0.15
+      },
+      "shift": {
+        "enabled": true,
+        "start_fraction": 0.6,
+        "latency_mult": 1.18,
+        "cpu_delta": 0.055,
+        "mem_delta": 0.018,
+        "request_rate_mult": 1.1,
+        "noise_mult": 1.15,
+        "component": "mean_and_noise_shift"
+      }
+    }
+  }
+}

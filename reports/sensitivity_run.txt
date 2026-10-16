@@ -1,0 +1,22 @@
+
+contamination_sweep
+   {'contamination': 0.02, 'flags': 118, 'precision': 0.4492, 'recall': 0.4649, 'f1': 0.4569, 'true_anomaly_rate': 0.0814}
+   {'contamination': 0.05, 'flags': 255, 'precision': 0.4118, 'recall': 0.9211, 'f1': 0.5691, 'true_anomaly_rate': 0.0814}
+   {'contamination': 0.08, 'flags': 321, 'precision': 0.3551, 'recall': 1.0, 'f1': 0.5241, 'true_anomaly_rate': 0.0814}
+   {'contamination': 0.12, 'flags': 403, 'precision': 0.2829, 'recall': 1.0, 'f1': 0.441, 'true_anomaly_rate': 0.0814}
+
+drift_effect_size_floor_sweep
+   {'effect_size_floor': 0.0, 'clean_windows': 4, 'clean_windows_flagged': 0, 'shifted_windows': 2, 'shifted_windows_flagged': 2, 'max_ks_on_clean': 0.1242}
+   {'effect_size_floor': 0.1, 'clean_windows': 4, 'clean_windows_flagged': 0, 'shifted_windows': 2, 'shifted_windows_flagged': 2, 'max_ks_on_clean': 0.1242}
+   {'effect_size_floor': 0.15, 'clean_windows': 4, 'clean_windows_flagged': 0, 'shifted_windows': 2, 'shifted_windows_flagged': 2, 'max_ks_on_clean': 0.1242}
+   {'effect_size_floor': 0.2, 'clean_windows': 4, 'clean_windows_flagged': 0, 'shifted_windows': 2, 'shifted_windows_flagged': 2, 'max_ks_on_clean': 0.1242}
+   {'effect_size_floor': 0.3, 'clean_windows': 4, 'clean_windows_flagged': 0, 'shifted_windows': 2, 'shifted_windows_flagged': 2, 'max_ks_on_clean': 0.1242}
+
+drift_autocorrelation_sweep
+   {'ar1_phi': 0.0, 'clean_windows': 4, 'clean_windows_flagged_no_floor': 0, 'max_ks_on_clean': 0.0925}
+   {'ar1_phi': 0.2, 'clean_windows': 4, 'clean_windows_flagged_no_floor': 0, 'max_ks_on_clean': 0.1133}
+   {'ar1_phi': 0.35, 'clean_windows': 4, 'clean_windows_flagged_no_floor': 0, 'max_ks_on_clean': 0.1242}
+   {'ar1_phi': 0.5, 'clean_windows': 4, 'clean_windows_flagged_no_floor': 1, 'max_ks_on_clean': 0.1525}
+   {'ar1_phi': 0.72, 'clean_windows': 4, 'clean_windows_flagged_no_floor': 1, 'max_ks_on_clean': 0.195}
+
+written: reports\metrics\sensitivity.json

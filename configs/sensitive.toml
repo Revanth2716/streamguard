@@ -1,0 +1,47 @@
+# StreamGuard "sensitive" configuration.
+#
+# A deliberately different operating point, used to show that the thresholds are
+# real knobs and that the trade-off is measurable rather than asserted:
+#   * a lower z-score threshold and a higher contamination detect more anomalies
+#     (higher recall) at the cost of more false positives;
+#   * a lower drift effect-size floor plus a smaller window reacts to subtler
+#     shifts, and (as measured) also produces drift alerts on clean windows.
+
+output_dir = "reports"
+alert_state_path = "data/processed/alert_state.json"
+
+[simulator]
+seed = 20261016
+n_reference = 1200
+n_stream = 1400
+interval_seconds = 60
+cycle_points = 48
+n_point_anomalies = 24
+anomaly_sigma_low = 2.6
+anomaly_sigma_high = 9.0
+
+[simulator.shift]
+enabled = true
+start_fraction = 0.60
+latency_mult = 1.18
+cpu_delta = 0.055
+mem_delta = 0.018
+request_rate_mult = 1.10
+noise_mult = 1.15
+
+[detector]
+zscore_window = 60
+zscore_threshold = 2.5
+zscore_min_periods = 20
+contamination = 0.05
+if_n_estimators = 200
+if_random_state = 20261016
+static_threshold_quantile = 0.99
+
+[drift]
+window_size = 120
+step = 120
+alpha = 0.05
+correction = "holm"
+min_window_size = 80
+effect_size_floor = 0.10

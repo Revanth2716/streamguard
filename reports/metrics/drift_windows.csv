@@ -1,0 +1,8 @@
+window_id,start_position,start_timestamp,end_timestamp,n_window,evaluated,any_drift,drifted_features,n_drifted,max_ks_statistic,severity,reason
+0,0,2026-01-01 20:00:00,2026-01-01 23:19:00,200,True,False,,0,0.06083333333333332,low,no drift: largest KS statistic 0.061 below effect-size floor or p_adj >= 0.01
+1,200,2026-01-01 23:20:00,2026-01-02 02:39:00,200,True,False,,0,0.10000000000000003,low,no drift: largest KS statistic 0.100 below effect-size floor or p_adj >= 0.01
+2,400,2026-01-02 02:40:00,2026-01-02 05:59:00,200,True,False,,0,0.12416666666666665,low,no drift: largest KS statistic 0.124 below effect-size floor or p_adj >= 0.01
+3,600,2026-01-02 06:00:00,2026-01-02 09:19:00,200,True,False,,0,0.10416666666666674,low,no drift: largest KS statistic 0.104 below effect-size floor or p_adj >= 0.01
+4,800,2026-01-02 09:20:00,2026-01-02 12:39:00,200,True,True,"latency_ms,cpu_util,mem_util",3,0.4175000000000001,critical,"KS two-sample vs reference (n=1200) on 200-point window, Holm-adjusted alpha=0.01: latency_ms D=0.418 (p_adj=8.61e-27), 3/4 features drifted, largest mean shift latency_ms +18.5%"
+5,1000,2026-01-02 12:40:00,2026-01-02 15:59:00,200,True,True,"latency_ms,cpu_util,mem_util",3,0.5341666666666667,critical,"KS two-sample vs reference (n=1200) on 200-point window, Holm-adjusted alpha=0.01: latency_ms D=0.534 (p_adj=4.15e-45), 3/4 features drifted, largest mean shift latency_ms +30.0%"
+6,1200,2026-01-02 16:00:00,2026-01-02 19:19:00,200,True,True,"latency_ms,cpu_util,mem_util",3,0.5316666666666667,critical,"KS two-sample vs reference (n=1200) on 200-point window, Holm-adjusted alpha=0.01: latency_ms D=0.532 (p_adj=1.17e-44), 3/4 features drifted, largest mean shift latency_ms +21.6%"

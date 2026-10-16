@@ -1,0 +1,55 @@
+StreamGuard - simulated telemetry only, no real operational data
+==============================================================================
+seed .................. 20261016
+reference rows ........ 1200 (anomaly-free, used for fitting)
+stream rows ........... 1400
+injected events ....... 24 (114 rows, rate 8.143%)
+distribution shift .... from 2026-01-02 10:00:00 (560 rows, mean_and_noise_shift)
+
+detector status
+         detector  fit_rows  flags  flag_rate  threshold  window  precision   recall       f1
+            dummy      1200      0     0.0000        NaN     NaN   0.000000 0.000000 0.000000
+static_percentile      1200    178     0.1271      0.995     NaN   0.629213 0.982456 0.767123
+   rolling_zscore      1200     62     0.0443      3.500   120.0   0.951613 0.517544 0.670455
+ isolation_forest      1200    118     0.0843      0.020     NaN   0.449153 0.464912 0.456897
+
+evaluation on the labelled simulated stream (sorted by F1)
+         detector  tp  fp  fn  precision  recall    f1  roc_auc  average_precision
+static_percentile 112  66   2      0.629   0.982 0.767    0.990              0.973
+   rolling_zscore  59   3  55      0.952   0.518 0.670    0.972              0.866
+ isolation_forest  53  65  61      0.449   0.465 0.457    0.940              0.409
+            dummy   0   0 114      0.000   0.000 0.000    0.500              0.081
+
+per-segment F1 (pre-drift vs injected-shift period)
+segment            drift  pre_drift
+detector                           
+dummy              0.000      0.000
+isolation_forest   0.493      0.395
+rolling_zscore     0.518      0.813
+static_percentile  0.702      0.860
+
+drift scan
+  window 0: no drift: largest KS statistic 0.061 below effect-size floor or p_adj >= 0.01
+  window 1: no drift: largest KS statistic 0.100 below effect-size floor or p_adj >= 0.01
+  window 2: no drift: largest KS statistic 0.124 below effect-size floor or p_adj >= 0.01
+  window 3: no drift: largest KS statistic 0.104 below effect-size floor or p_adj >= 0.01
+  window 4: KS two-sample vs reference (n=1200) on 200-point window, Holm-adjusted alpha=0.01: latency_ms D=0.418 (p_adj=8.61e-27), 3/4 features drifted, largest mean shift latency_ms +18.5%
+  window 5: KS two-sample vs reference (n=1200) on 200-point window, Holm-adjusted alpha=0.01: latency_ms D=0.534 (p_adj=4.15e-45), 3/4 features drifted, largest mean shift latency_ms +30.0%
+  window 6: KS two-sample vs reference (n=1200) on 200-point window, Holm-adjusted alpha=0.01: latency_ms D=0.532 (p_adj=1.17e-44), 3/4 features drifted, largest mean shift latency_ms +21.6%
+
+alerts raised ......... 367 {'high': 124, 'critical': 105, 'low': 85, 'medium': 53}
+
+artifacts written:
+  evaluation           reports\metrics\evaluation.json
+  metrics_by_detector  reports\metrics\metrics_by_detector.csv
+  latency              reports\metrics\detection_latency.csv
+  segments             reports\metrics\metrics_by_segment.csv
+  drift_windows        reports\metrics\drift_windows.csv
+  labelled_stream      data\processed\stream_labelled.csv
+  run_metadata         reports\metrics\run_metadata.json
+  metrics_timeseries   reports\figures\metrics_timeseries.html
+  score_timeseries     reports\figures\score_timeseries.html
+  metrics_bar          reports\figures\metrics_bar.html
+  confusion_matrix     reports\figures\confusion_matrix.html
+  drift_heatmap        reports\figures\drift_heatmap.html
+  drift_ks             reports\figures\drift_ks.html
